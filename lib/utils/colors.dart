@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-const primary = Colors.orange;
+const primary = Colors.black;
 
 var secondary = const Color(0xffFCB315);
 var black = const Color(0xff151515);
