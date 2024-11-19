@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wecare/screens/main_home_screen.dart';
+import 'package:wecare/screens/admin_home_screen.dart';
 import 'package:wecare/screens/recover_password_screen.dart';
 import 'package:wecare/widgets/button_widget.dart';
 import 'package:wecare/widgets/text_widget.dart';
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
               label: 'Submit',
               onPressed: () {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const MainHomeScreen()));
+                    builder: (context) => const AdminHomeScreen()));
               },
             ),
             TextButton(
