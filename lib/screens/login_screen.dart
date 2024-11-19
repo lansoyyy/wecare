@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wecare/screens/admin_home_screen.dart';
+import 'package:wecare/screens/nurse_home_screen.dart';
 import 'package:wecare/screens/recover_password_screen.dart';
+import 'package:wecare/screens/staff_home_screen.dart';
 import 'package:wecare/widgets/button_widget.dart';
 import 'package:wecare/widgets/text_widget.dart';
 import 'package:wecare/widgets/textfield_widget.dart';
@@ -62,8 +64,16 @@ class _LoginScreenState extends State<LoginScreen> {
             ButtonWidget(
               label: 'Submit',
               onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const AdminHomeScreen()));
+                if (widget.type == 'Admin') {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const AdminHomeScreen()));
+                } else if (widget.type == 'Staff') {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const StaffHomeScreen()));
+                } else {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const NurseHomeScreen()));
+                }
               },
             ),
             TextButton(
