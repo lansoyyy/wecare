@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   fluttertoast:
   intl:
+  table_calendar:
 
 dev_dependencies:
   flutter_test:
