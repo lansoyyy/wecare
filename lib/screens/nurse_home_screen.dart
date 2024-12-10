@@ -99,7 +99,8 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
                                               MainAxisAlignment.center,
                                           children: [
                                             TextWidget(
-                                              text: 'Title of notifications.',
+                                              text:
+                                                  'Status: ${data[i]['status']}',
                                               fontSize: 14,
                                               color: Colors.black,
                                               fontFamily: 'Bold',
