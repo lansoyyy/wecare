@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wecare/widgets/button_widget.dart';
 import 'package:wecare/widgets/text_widget.dart';
 import 'package:wecare/widgets/textfield_widget.dart';
+import 'package:wecare/widgets/toast_widget.dart';
 
 class RecoverScreen extends StatefulWidget {
   String type;
@@ -12,7 +13,7 @@ class RecoverScreen extends StatefulWidget {
 }
 
 class _RecoverScreenState extends State<RecoverScreen> {
-  final num = TextEditingController();
+  final number = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +52,7 @@ class _RecoverScreenState extends State<RecoverScreen> {
               child: TextFieldWidget(
                 borderColor: Colors.black,
                 label: 'Enter Phone Number',
-                controller: num,
+                controller: number,
               ),
             ),
             const SizedBox(
@@ -60,7 +61,18 @@ class _RecoverScreenState extends State<RecoverScreen> {
             ButtonWidget(
               label: 'Send Code',
               onPressed: () {
-                Navigator.pop(context);
+                if (number.text == '09090104355') {
+                  Navigator.pop(context);
+                  if (widget.type == 'Admin') {
+                    showToast('Your password is: admin_password');
+                  } else if (widget.type == 'Staff') {
+                    showToast('Your password is: staff_password');
+                  } else {
+                    showToast('Your password is: nurse_password');
+                  }
+                } else {
+                  showToast('Invalid mobile number!');
+                }
               },
             ),
           ],

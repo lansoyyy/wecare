@@ -6,6 +6,7 @@ import 'package:wecare/screens/staff_home_screen.dart';
 import 'package:wecare/widgets/button_widget.dart';
 import 'package:wecare/widgets/text_widget.dart';
 import 'package:wecare/widgets/textfield_widget.dart';
+import 'package:wecare/widgets/toast_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   String type;
@@ -65,14 +66,26 @@ class _LoginScreenState extends State<LoginScreen> {
               label: 'Submit',
               onPressed: () {
                 if (widget.type == 'Admin') {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => const AdminHomeScreen()));
+                  if (password.text == 'admin_password') {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const AdminHomeScreen()));
+                  } else {
+                    showToast('Invalid password!');
+                  }
                 } else if (widget.type == 'Staff') {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => const StaffHomeScreen()));
+                  if (password.text == 'staff_password') {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const StaffHomeScreen()));
+                  } else {
+                    showToast('Invalid password!');
+                  }
                 } else {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => const NurseHomeScreen()));
+                  if (password.text == 'nurse_password') {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const NurseHomeScreen()));
+                  } else {
+                    showToast('Invalid password!');
+                  }
                 }
               },
             ),
