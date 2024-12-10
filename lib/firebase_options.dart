@@ -53,10 +53,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-      apiKey: "AIzaSyBeLV6gHeOBhxXyGIFnkzpCJU7XHMH6NDQ",
-      authDomain: "esti-32772.firebaseapp.com",
-      projectId: "esti-32772",
-      storageBucket: "esti-32772.firebasestorage.app",
-      messagingSenderId: "67177010039",
-      appId: "1:67177010039:web:29fe3f7fa429f10b054772");
+      apiKey: "AIzaSyDQffww1dGI-GLh_9bkHPjkoNdAf10e8IU",
+      authDomain: "wecare-65e9b.firebaseapp.com",
+      databaseURL:
+          "https://wecare-65e9b-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "wecare-65e9b",
+      storageBucket: "wecare-65e9b.firebasestorage.app",
+      messagingSenderId: "981525771788",
+      appId: "1:981525771788:web:943486162a5274a1126029",
+      measurementId: "G-SX1KD9K7N0");
 }
