@@ -87,7 +87,9 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
                                       height: 60,
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: Colors.purple[200],
+                                        color: data[i]['status'] == 'Taken'
+                                            ? Colors.purple[200]
+                                            : Colors.red[200],
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Padding(
@@ -99,8 +101,12 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
                                               MainAxisAlignment.center,
                                           children: [
                                             TextWidget(
-                                              text:
-                                                  'Status: ${data[i]['status']}',
+                                              text: data[i]['status'] == 'Taken'
+                                                  ? 'Patients have already taken their medication.'
+                                                  : data[i]['status'] ==
+                                                          'Missed'
+                                                      ? 'Patients missed their scheduled medication.'
+                                                      : 'Medication in Comportment 1 is scheduled for 7:00 AM, Please be ready in 30 minutes',
                                               fontSize: 14,
                                               color: Colors.black,
                                               fontFamily: 'Bold',
@@ -191,7 +197,9 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
                                       height: 60,
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: Colors.purple[200],
+                                        color: data[i]['status'] == 'Taken'
+                                            ? Colors.purple[200]
+                                            : Colors.red[200],
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Padding(
@@ -203,8 +211,12 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
                                               MainAxisAlignment.center,
                                           children: [
                                             TextWidget(
-                                              text:
-                                                  'Status: ${data[i]['status']}',
+                                              text: data[i]['status'] == 'Taken'
+                                                  ? 'Patients have already taken their medication.'
+                                                  : data[i]['status'] ==
+                                                          'Missed'
+                                                      ? 'Patients missed their scheduled medication.'
+                                                      : 'Medication in Comportment 1 is scheduled for 7:00 AM, Please be ready in 30 minutes',
                                               fontSize: 14,
                                               color: Colors.black,
                                               fontFamily: 'Bold',

@@ -23,8 +23,7 @@ class CalendarScreen extends StatelessWidget {
         onDaySelected: (selectedDay, focusedDay) {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => ReportsScreen(
-                    date:
-                        '${selectedDay.day}/${selectedDay.month}${selectedDay.year}',
+                    date: selectedDay,
                   )));
         },
         firstDay: DateTime.utc(2010, 10, 16),
