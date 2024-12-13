@@ -84,7 +84,7 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
                                 ? Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      height: 60,
+                                      height: 65,
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: data[i]['status'] == 'Taken'
@@ -194,7 +194,7 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
                                 ? Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      height: 60,
+                                      height: 65,
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: data[i]['status'] == 'Taken'

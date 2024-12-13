@@ -66,7 +66,7 @@ class StaffHomeScreen extends StatelessWidget {
                                 ? Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      height: 60,
+                                      height: 65,
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: data[i]['status'] == 'Taken'
@@ -176,7 +176,7 @@ class StaffHomeScreen extends StatelessWidget {
                                 ? Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      height: 60,
+                                      height: 65,
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: data[i]['status'] == 'Taken'
