@@ -20,6 +20,7 @@ class CalendarScreen extends StatelessWidget {
         ),
       ),
       body: TableCalendar(
+        calendarFormat: CalendarFormat.twoWeeks,
         onDaySelected: (selectedDay, focusedDay) {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => ReportsScreen(

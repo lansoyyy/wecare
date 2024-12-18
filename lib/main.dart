@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:wecare/firebase_options.dart';
-import 'package:wecare/screens/splash_screen.dart';
+import 'package:wecare/screens/admin_home_screen.dart';
 
 // void main() {
 //   runApp(const MyApp());
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'We Care',
-      home: SplashScreen(),
+      home: AdminHomeScreen(),
     );
   }
 }
