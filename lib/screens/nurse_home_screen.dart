@@ -271,6 +271,13 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
     );
   }
 
+  String _formatTime(TimeOfDay time) {
+    final now = DateTime.now();
+    final dateTime =
+        DateTime(now.year, now.month, now.day, time.hour, time.minute);
+    return DateFormat('h:mm a').format(dateTime);
+  }
+
   TimeOfDay morningTime = const TimeOfDay(hour: 7, minute: 0);
   TimeOfDay noonTime = const TimeOfDay(hour: 12, minute: 0);
   TimeOfDay eveningTime = const TimeOfDay(hour: 18, minute: 0);
@@ -319,7 +326,19 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
           ),
           actions: [
             TextButton(
-              onPressed: () {
+              onPressed: () async {
+                final formattedMorningTime = _formatTime(morningTime);
+                final formattedNoonTime = _formatTime(noonTime);
+                final formattedEveningTime = _formatTime(eveningTime);
+
+                DatabaseReference ref =
+                    FirebaseDatabase.instance.ref("Schedule");
+
+                await ref.set({
+                  "morning": formattedMorningTime,
+                  "noon": formattedNoonTime,
+                  "evening": formattedEveningTime
+                });
                 Navigator.pop(context);
                 showToast('Time set succesfully!');
               },
