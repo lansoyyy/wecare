@@ -30,11 +30,7 @@ class ReportsScreen extends StatelessWidget {
               return const Center(child: CircularProgressIndicator());
             }
 
-            List? data = (snapshot.data!.snapshot.value as Map?)
-                ?.entries
-                .where((entry) => entry.key != 'Schedule')
-                .map((entry) => entry.value)
-                .toList();
+            List? data = snapshot.data!.snapshot.value as List?;
             return Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
@@ -62,8 +58,8 @@ class ReportsScreen extends StatelessWidget {
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: data[i]['status'] == 'Taken'
-                                            ? Colors.purple[200]
-                                            : Colors.red[200],
+                                            ? Colors.green[300]
+                                            : Colors.red[300],
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Padding(
