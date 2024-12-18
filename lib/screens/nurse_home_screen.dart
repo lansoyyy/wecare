@@ -47,7 +47,11 @@ class _NurseHomeScreenState extends State<NurseHomeScreen> {
               return const Center(child: CircularProgressIndicator());
             }
 
-            List? data = snapshot.data!.snapshot.value as List?;
+            List? data = (snapshot.data!.snapshot.value as Map?)
+                ?.entries
+                .where((entry) => entry.key != 'Schedule')
+                .map((entry) => entry.value)
+                .toList();
 
             return Padding(
               padding: const EdgeInsets.all(10.0),
